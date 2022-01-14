@@ -1,0 +1,21 @@
+.contenedor{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    color: antiquewhite;
+  }
+  .inicio{
+     background-color: #6610f2 ;            
+  }
+  .interes{
+     background-color: #304ffe ;            
+  }
+  .informacion{
+     background-color: #30fe9ee7 ;            
+  }
+  .contacto{
+      background-color: #118aaf ;        
+   }
