@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://fonts.google.com/specimen/Poppins"></script>
+    <title>Age Calulator</title>
+</head>
+<body class="bg-gray-200">
+
+    <h1 class="flex justify-center items-center text-black uppercase text-3xl font-extrabold mt-[50px]">Age Calculator</h1>
+
+    <!-- Page container -->
+    <section class="flex justify-center items-center mt-10">
+        <div class="flex flex-col bg-white rounded-[20px] rounded-br-[110px]">
+            <!-- Container Date Inputs -->
+            <form class="md:ml-4 mt-3 p-2 md:w-[500px] w-[380px] flex md:justify-start justify-center gap-2">
+                <!-- Container Day -->
+                <div class="p-1">
+                    <label class="text-gray-400 text-[11px] font-bold uppercase tracking-widest">day</label>
+                    <input 
+                    type="day" 
+                    placeholder="DD"
+                    class="flex flex-col border rounded-md font-extrabold text-2xl p-2 md:w-28 w-20"
+                    />
+                </div>  
+                <!-- Container Month -->                  
+                <div class="p-1">
+                    <label class="text-gray-400 text-[11px] font-bold uppercase tracking-widest">Month</label>
+                    <input 
+                    type="day" 
+                    placeholder="MM"
+                    class="flex flex-col border rounded-md font-extrabold text-2xl p-2 md:w-28 w-20"
+                    />
+                </div> 
+                <!-- Container Year -->                   
+                <div class="p-1">
+                    <label class="text-gray-400 text-[11px] font-bold uppercase tracking-widest">Year</label>
+                    <input 
+                    type="day" 
+                    placeholder="YYYY"
+                    class="flex flex-col border rounded-md font-extrabold text-2xl p-2 md:w-28 w-24"
+                    />
+                </div>
+            </form>
+
+            <!-- Button -->
+            <div class="ml-4 p-2 mt-3 md:w-auto">
+                <div class="p-3 border-t">
+                    <div class="flex md:justify-end justify-center">
+                        <button class="md:absolute md:mt-[-40px] md:ml-10 py-4 px-4 bg-[#854dff] rounded-full">
+                            <img 
+                                src="img/arrow-icon.webp" 
+                                alt="arrow icon"
+                                class="text-white w-9 rotate-90"
+                            >
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Days -->
+            <div class="ml-4 px-4 mb-10">
+                <h2 class="text-6xl font-extrabold"><span class="text-6xl font-extrabold text-[#854dff]">--</span> years</h2>
+                <h2 class="text-6xl font-extrabold"><span class="text-6xl font-extrabold text-[#854dff]">--</span> months</h2>
+                <h2 class="text-6xl font-extrabold"><span class="text-6xl font-extrabold text-[#854dff]">--</span> days</h2>
+            </div>
+        </div>
+    </section>
+    
+
+</body>
+</html>
