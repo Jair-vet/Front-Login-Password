@@ -2,7 +2,7 @@
 export const Formulario = () => {
   return (
     <div>
-        <form id="form" className="mx-auto container m-5 md:pr-[20%] md:pl-[20%] pr-[5%] pl-[5%] space-y-2">
+        <form id="form" className="mx-auto container m-5 md:pr-[10%] md:pl-[10%] pr-[5%] pl-[5%] space-y-2">
             <h2 className="text-3xl text-center font-extralight text-white">Registrate</h2>
             <div className="grid grid-cols-3 gap-3">
                 {/* <!-- Nombre --> */}
