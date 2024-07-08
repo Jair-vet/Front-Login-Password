@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #hero {
+    background-image: url('../src/img/MOCKUP-Arte.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-size: cover; */
+ 
+.Bg-color {
+    background: linear-gradient(to bottom right, #8A2BE2, #4169E1);
+}
+
+.form-control {
+    @apply flex flex-col p-1
+}
+
+.label-control {
+    @apply rounded-md p-2
+}
