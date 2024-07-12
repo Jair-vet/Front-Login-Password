@@ -9,7 +9,7 @@
     /* background-size: cover; */
  
 .Bg-color {
-    background: linear-gradient(to bottom right, #8A2BE2, #4169E1);
+    background: #372D37 
 }
 
 .form-control {
@@ -18,4 +18,7 @@
 
 .label-control {
     @apply rounded-md p-2
+}
+.error-field {
+    @apply text-red-500 text-center uppercase mt-1
 }
