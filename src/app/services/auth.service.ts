@@ -7,8 +7,8 @@ import { ApiResponse } from '../models/response.model';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://binteapi.com:4012/api';
-  // private apiUrl = 'http://localhost:3999/api';
+  // private apiUrl = 'https://binteapi.com:4012/api';
+  private apiUrl = 'http://localhost:3999/api';
   
   constructor(private http: HttpClient) {}
   get token(): string {
@@ -64,6 +64,14 @@ export class AuthService {
     );
   }
 
+  validateMembership(correo: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/users/validar-membresia`, { correo, password });
+  }
+  // Function to validate email and password, and get the associated membership
+  obtainMembresia(correo: string, password: string): Observable<any> {
+    const payload = { correo, password };
+    return this.http.post(`${this.apiUrl}/users/recuperar-membresia`, payload);
+  }
 
   getClientInfo(correo: string, membresia: string): Observable<any> {
     const params = { correo, membresia };
