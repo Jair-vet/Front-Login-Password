@@ -23,6 +23,7 @@ export class LoginComponent {
         if (response.ok) { 
           if (response.redirectUrl) {
             // Si ya tiene un Password redirecciona
+            this.isLoading = false; // Deactivate loader
             window.location.href = response.redirectUrl;
           }else {
             const userData = {
@@ -40,10 +41,12 @@ export class LoginComponent {
               confirmButtonText: 'OK'
             }).then(() => {
               // Redirect to the password change page
+              this.isLoading = false; // Deactivate loader
               this.router.navigate(['/cambio-password']);
             });
           }
         } else {
+          this.isLoading = false; // Deactivate loader
           Swal.fire({
             icon: 'error',
             title: 'Correo o membresía incorrectos',
@@ -55,6 +58,7 @@ export class LoginComponent {
         }
       },
       (error) => {
+        this.isLoading = false; // Deactivate loader
         console.log(error)
         Swal.fire({
           icon: 'error',
