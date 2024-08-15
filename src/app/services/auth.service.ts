@@ -7,8 +7,8 @@ import { ApiResponse } from '../models/response.model';
   providedIn: 'root'
 })
 export class AuthService {
-  // private apiUrl = 'https://binteapi.com:4012/api';
-  private apiUrl = 'http://localhost:4012/api';
+  private apiUrl = 'https://binteapi.com:4012/api';
+  // private apiUrl = 'http://localhost:4012/api';
   
   constructor(private http: HttpClient) {}
   get token(): string {
