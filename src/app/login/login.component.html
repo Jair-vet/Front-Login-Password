@@ -1,12 +1,11 @@
 <div class="flex items-center justify-center min-h-screen bg-slate-800 px-4">
     <div class="w-full max-w-md p-8 bg-white shadow-md rounded">
-        <h2 class="text-2xl md:text-3xl font-bold text-center uppercase">Login</h2>
         <div class="flex justify-center items-center h-20">
             <img src="../../assets/img/logo.png" class="h-auto" />
         </div>
         <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
             <div class="mt-4">
-                <label class="block text-sm font-bold text-gray-700 uppercase">Correo</label>
+                <label class="block text-sm font-bold text-gray-700 uppercase font-signika">Correo:</label>
                 <input
                     type="email"
                     id="correo"
@@ -15,15 +14,15 @@
                     email
                     required
                     #correoField="ngModel"
-                    class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border rounded focus:outline-none focus:bg-white"
+                    class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border rounded focus:outline-none focus:bg-white font-signika"
                 />
-                <div *ngIf="correoField.invalid && correoField.touched" class="uppercase text-red-700">
+                <div *ngIf="correoField.invalid && correoField.touched" class="uppercase text-red-700 font-signika">
                     <small *ngIf="correoField.errors?.['required']">El correo es obligatorio.</small>
                     <small *ngIf="correoField.errors?.['email']">El correo no es válido.</small>
                 </div>
             </div>
             <div class="mt-4">
-                <label class="block text-sm font-bold text-gray-700 uppercase">Membresia</label>
+                <label class="block text-sm font-bold text-gray-700 uppercase font-signika">Membresia:</label>
                 <input
                     type="text"
                     id="membresia"
@@ -31,16 +30,16 @@
                     name="membresia"
                     required
                     #membresiaField="ngModel"
-                    class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border rounded focus:outline-none focus:bg-white"
+                    class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border rounded focus:outline-none focus:bg-white font-signika"
                 />
-                <div *ngIf="correoField.invalid && correoField.touched" class="uppercase text-red-700">
+                <div *ngIf="correoField.invalid && correoField.touched" class="uppercase text-red-700 font-signika">
                     <small *ngIf="membresiaField.errors?.['required']">La membresía es obligatoria.</small>
                 </div>
             </div>
             <div class="mt-6">
                 <button
                     type="submit"
-                    class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded uppercase hover:bg-blue-700"
+                    class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded uppercase hover:bg-blue-700 font-signika"
                     [disabled]="loginForm.invalid"
                 >
                     Iniciar Sesión
@@ -49,3 +48,6 @@
         </form>
     </div>
 </div>
+
+<!-- Show loader when loading -->
+<app-loader *ngIf="isLoading"></app-loader>

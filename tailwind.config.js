@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{vue,js,html,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'signika': ['"Signika Negative"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

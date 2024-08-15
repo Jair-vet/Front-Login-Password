@@ -11,31 +11,38 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent {
   correo: string = '';
   membresia: string = '';
+  isLoading: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
-  
+    this.isLoading = true; // Activate loader
     this.authService.login(this.correo, this.membresia).subscribe(
       (response) => {
+        this.isLoading = false; // Deactivate loader
         if (response.ok) { 
-          const userData = {
-            correo: this.correo,
-            membresia: this.membresia,
-            token: response.data.token
-          };
-          localStorage.setItem('user', JSON.stringify(userData)); // Guarda toda la información del usuario
-          localStorage.setItem('token', response.data.token); // Guarda el token si está presente
-          // Show welcome message
-          Swal.fire({
-            icon: 'success',
-            title: 'Bienvenido',
-            text: 'Se ha iniciado sesión correctamente',
-            confirmButtonText: 'OK'
-          }).then(() => {
-            // Redirect to the password change page
-            this.router.navigate(['/cambio-password']);
-          });
+          if (response.redirectUrl) {
+            // Si ya tiene un Password redirecciona
+            window.location.href = response.redirectUrl;
+          }else {
+            const userData = {
+              correo: this.correo,
+              membresia: this.membresia,
+              token: response.data.token
+            };
+            localStorage.setItem('user', JSON.stringify(userData)); // Guarda toda la información del usuario
+            localStorage.setItem('token', response.data.token); // Guarda el token si está presente
+            // Show welcome message
+            Swal.fire({
+              icon: 'success',
+              title: 'Bienvenido',
+              text: 'Se ha iniciado sesión correctamente',
+              confirmButtonText: 'OK'
+            }).then(() => {
+              // Redirect to the password change page
+              this.router.navigate(['/cambio-password']);
+            });
+          }
         } else {
           Swal.fire({
             icon: 'error',

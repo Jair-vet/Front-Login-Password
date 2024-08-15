@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { CambioPasswordComponent } from './cambio-password/cambio-password.component';
 import { AppComponent } from './app.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CambioPasswordComponent
+    CambioPasswordComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

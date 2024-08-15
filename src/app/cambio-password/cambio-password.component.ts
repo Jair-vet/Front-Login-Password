@@ -41,7 +41,7 @@ export class CambioPasswordComponent implements OnInit {
   onSubmit(): void {
     const token = localStorage.getItem('token');
     
-    console.log(this.cliente.correo, this.cliente.membresia, this.newPassword);
+    // console.log(this.cliente.correo, this.cliente.membresia, this.newPassword);
     if (token) {
       this.authService.updatePassword(this.cliente.correo, this.cliente.membresia, this.newPassword).subscribe(
         (response) => {
