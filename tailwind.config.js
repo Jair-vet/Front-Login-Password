@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         'signika': ['"Signika Negative"', 'sans-serif'],
       },
+      backgroundImage: {
+        'custom-bg': "url('assets/img/fondo.jpg')",
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,5 @@
-<div class="flex items-center justify-center min-h-screen bg-slate-800 px-4">
-    <div class="w-full max-w-md p-8 bg-white shadow-md rounded">
+<div class="flex items-center justify-center min-h-screen bg-cover bg-center bg-custom-bg px-4">
+    <div class="w-full max-w-md p-8 bg-white bg-opacity-80 shadow-md rounded">
       <div class="flex justify-center items-center h-20">
         <img src="../../assets/img/logo.png" alt="Logo" class="h-auto" />
       </div>
@@ -17,7 +17,7 @@
             email
             required
             #correoField="ngModel"
-            class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border rounded focus:outline-none focus:bg-white font-signika"
+            class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-300 border border-yellow-800 rounded focus:outline-none focus:bg-white font-signika"
           />
           <div *ngIf="correoField.invalid && correoField.touched" class="uppercase text-red-700 font-signika">
             <small *ngIf="correoField.errors?.['required']">El correo es obligatorio.</small>
@@ -35,7 +35,7 @@
             name="password"
             required
             #passwordField="ngModel"
-            class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border rounded focus:outline-none focus:bg-white font-signika"
+            class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-300 border border-yellow-800 rounded focus:outline-none focus:bg-white font-signika"
           />
           <div *ngIf="passwordField.invalid && passwordField.touched" class="uppercase text-red-700 font-signika">
             <small *ngIf="passwordField.errors?.['required']">La contraseña es obligatoria.</small>
@@ -46,7 +46,7 @@
         <div class="mt-6">
           <button
             type="submit"
-            class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded uppercase hover:bg-blue-700 font-signika"
+            class="w-full px-4 py-2 font-bold text-white cursor-pointer bg-[#9f592d] rounded uppercase hover:bg-[#763e1b] font-signika"
             [disabled]="membresiaForm.invalid"
           >
             Buscar Membresía
@@ -55,14 +55,14 @@
       </form>
   
       <!-- Display membership information if available -->
-    <div class="mt-6 flex flex-col space-y-3 items-center justify-center">
-        <div *ngIf="showMembresia" class="mt-6">
-          <p class="text-lg text-gray-700 font-signika">Su membresía es: <span class="font-extrabold">{{ membresia }}</span></p>
-        </div>
-        <a routerLink="/login" class="text-sm uppercase text-blue-500 hover:underline font-signika">
-            Regresar
-        </a>                          
-    </div>
+      <div class="mt-6 flex flex-col space-y-3 items-center justify-center">
+          <div *ngIf="showMembresia" class="mt-6">
+            <p class="text-lg text-gray-700 font-signika">Su membresía es: <span class="font-extrabold">{{ membresia }}</span></p>
+          </div>
+          <a routerLink="/login" class="text-sm uppercase text-yellow-700 hover:underline font-signika">
+              Regresar
+          </a>                          
+      </div>
     </div>
   </div>
   
