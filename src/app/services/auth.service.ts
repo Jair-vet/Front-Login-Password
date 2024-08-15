@@ -8,7 +8,7 @@ import { ApiResponse } from '../models/response.model';
 })
 export class AuthService {
   private apiUrl = 'https://binteapi.com:4012/api';
-  // private apiUrl = 'http://localhost:4012/api';
+  // private apiUrl = 'http://localhost:3999/api';
   
   constructor(private http: HttpClient) {}
   get token(): string {
@@ -51,6 +51,19 @@ export class AuthService {
     );
   }
   
+  checkMembership(correo: string, membresia: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/users/valid-user`, { correo, membresia });
+  }
+
+ 
+  updatePasswordCliente(correo: string, membresia: string, newPassword: string): Observable<ApiResponse> {
+    const url = `${this.apiUrl}/users/recuperar-password`;
+    return this.http.post<ApiResponse>(
+      url, 
+      { correo, membresia, newPassword }
+    );
+  }
+
 
   getClientInfo(correo: string, membresia: string): Observable<any> {
     const params = { correo, membresia };

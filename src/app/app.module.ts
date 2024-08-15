@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { CambioPasswordComponent } from './cambio-password/cambio-password.component';
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './loader/loader.component';
+import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LoaderComponent } from './loader/loader.component';
     AppComponent,
     LoginComponent,
     CambioPasswordComponent,
-    LoaderComponent
+    LoaderComponent,
+    RecuperarPasswordComponent
   ],
   imports: [
     BrowserModule,
