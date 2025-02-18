@@ -20,7 +20,7 @@ export const Footer = () => {
               Aviso de Privacidad
             </a>
           </p>
-          <p className="text-gray-400">V. 1.0.11</p>
+          <p className="text-gray-400">V. 1.0.12</p>
         </div>
         <p className="text-white text-lg flex items-center">
           Desarrollado por:
